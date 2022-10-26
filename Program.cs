@@ -1,52 +1,62 @@
 ﻿// CS 1400 - Lab 7: Conversions
 
 // Temperature Unit Conversion
-double FahrenheitToCelsius(double fahrenheit) {
 
+string markerCelsius = " °C";
+string markerFahrenheit = " °F";
+string markerKelvin = " K";
+(double, UnitTemperature, string) temperature = (0.0, UnitTemperature.Celsius, markerCelsius);
+
+
+static double FahrenheitToCelsius(double fahrenheit) {
 	double celsius = 0.0;
 	celsius = (fahrenheit - 32.0) * (5/9);
 
 	return celsius;
 };
 
-Snippet.Note("function: FahrenheitToCelsius -- 4");
+Snippet.Note("function: FahrenheitToCelsius -- 18");
 Snippet.Note("Input: 32.0; Expected Output: 0.0;");
 Snippet.Note("Output:");
-Snippet.Note(FahrenheitToCelsius(32.0));
+temperature = (FahrenheitToCelsius(32.0), UnitTemperature.Celsius, markerCelsius);
+Snippet.Note(temperature);
+Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
 
 
-double FahrenheitToKelvin(double fahrenheit) {
-
+static double FahrenheitToKelvin(double fahrenheit) {
 	double kelvin = 0.0;
 	kelvin = (fahrenheit + 459.67) * 5/9;
 
 	return kelvin;
 };
 
-Snippet.Note("function: FahrenheitToKelvin -- 18");
+Snippet.Note("function: FahrenheitToKelvin -- 34");
 Snippet.Note("Input: 32.0; Expected Output: 273.15;");
 Snippet.Note("Output:");
-Snippet.Note(FahrenheitToKelvin(32.0));
+temperature = (FahrenheitToKelvin(32.0), UnitTemperature.Kelvin, markerKelvin);
+Snippet.Note(temperature);
+Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
 
 
-double CelsiusToFahrenheit(double celsius) {
-
+static double CelsiusToFahrenheit(double celsius) {
 	double fahrenheit = 0.0;
 	fahrenheit = celsius * 9/5 + 32;
 
 	return fahrenheit;
 };
 
-Snippet.Note("function: CelsiusToFahrenheit -- 32");
+Snippet.Note("function: CelsiusToFahrenheit -- 43");
 Snippet.Note("Input: 32.0; Expected Output: 89.6;");
 Snippet.Note("Output:");
-Snippet.Note(CelsiusToFahrenheit(32.0));
+temperature = (CelsiusToFahrenheit(32.0), UnitTemperature.Fahrenheit, markerFahrenheit);
+Snippet.Note(temperature);
+Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
 
 
-double CelsiusToKelvin(double celsius) {
+static double CelsiusToKelvin(double celsius) {
 
 	double kelvin = 0.0;
 	kelvin = celsius + 273.15;
@@ -61,34 +71,34 @@ Snippet.Note(CelsiusToKelvin(32.0));
 Snippet.Break();
 
 
-double KelvinToFahrenheit(double kelvin) {
+// static double KelvinToFahrenheit(double kelvin) {
 
-	double fahrenheit = 0.0;
-	fahrenheit = kelvin * 9/5 - 459.67;
+// 	double fahrenheit = 0.0;
+// 	fahrenheit = kelvin * 9/5 - 459.67;
 
-	return fahrenheit;
-};
+// 	return fahrenheit;
+// };
 
-Snippet.Note("function: KelvinToFahrenheit -- 58");
-Snippet.Note("Input: 32.0; Expected Output: -402.07;");
-Snippet.Note("Output:");
-Snippet.Note(KelvinToFahrenheit(32.0));
-Snippet.Break();
+// Snippet.Note("function: KelvinToFahrenheit -- 58");
+// Snippet.Note("Input: 32.0; Expected Output: -402.07;");
+// Snippet.Note("Output:");
+// Snippet.Note(KelvinToFahrenheit(32.0));
+// Snippet.Break();
 
 
-double KelvinToCelsius(double kelvin) {
+// static double KelvinToCelsius(double kelvin) {
 
-	double celsius = 0.0;
-	celsius = kelvin - 273.15;
+// 	double celsius = 0.0;
+// 	celsius = kelvin - 273.15;
 
-	return celsius;
-};
+// 	return celsius;
+// };
 
-Snippet.Note("function: KelvinToCelsius -- 70");
-Snippet.Note("Input: 32.0; Expected Output: -241.15;");
-Snippet.Note("Output:");
-Snippet.Note(KelvinToCelsius(32.0));
-Snippet.Break();
+// Snippet.Note("function: KelvinToCelsius -- 70");
+// Snippet.Note("Input: 32.0; Expected Output: -241.15;");
+// Snippet.Note("Output:");
+// Snippet.Note(KelvinToCelsius(32.0));
+// Snippet.Break();
 
 // ------------------------------------------------------------------
 
