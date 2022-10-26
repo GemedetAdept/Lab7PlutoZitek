@@ -8,3 +8,10 @@ enum UnitTemperature {
 	Fahrenheit,
 	Kelvin,
 }
+
+enum UnitLength {
+
+	Inches,
+	Feet,
+	Yards,
+}
