@@ -3,8 +3,8 @@ CS 1400 - Lab 7: Conversion
 
 Requirements:
 [x] 1. Create an enumeration with temperature units. Celsius, Fahrenheit, and Kelvin.
-[ ] 2. Create an enumeration with length units. Inch, Feet, Yard.
-[ ] 3. Create an enumeration with time units. Seconds, Minutes, Hours
+[x] 2. Create an enumeration with length units. Inch, Feet, Yard.
+[x] 3. Create an enumeration with time units. Seconds, Minutes, Hours
 [ ] 4. Write Conversion Functions for Celsius to Fahrenheit and Kelvin. The Functions should return a tuple with the Measurement and the Unit.
 [ ] 5. Write Conversion Functions for Fahrenheit to Celsius and Kelvin. The Functions should return a tuple with the Measurement and the Unit.
 [ ] 6. Write Conversion Functions for Kelvin to Celsius and Fahrenheit. The Functions should return a tuple with the Measurement and the Unit.

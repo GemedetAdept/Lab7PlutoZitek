@@ -15,3 +15,10 @@ enum UnitLength {
 	Feet,
 	Yards,
 }
+
+enum UnitTime {
+
+	Seconds,
+	Minutes,
+	Hours,
+}
