@@ -13,7 +13,6 @@ static double FahrenheitToCelsius(double fahrenheit) {
 
 	return celsius;
 };
-
 temperature = (FahrenheitToCelsius(32.0), UnitTemperature.Celsius, markerCelsius);
 Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
@@ -24,7 +23,6 @@ static double FahrenheitToKelvin(double fahrenheit) {
 
 	return kelvin;
 };
-
 temperature = (FahrenheitToKelvin(32.0), UnitTemperature.Kelvin, markerKelvin);
 Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
@@ -37,7 +35,6 @@ static double CelsiusToFahrenheit(double celsius) {
 
 	return fahrenheit;
 };
-
 temperature = (CelsiusToFahrenheit(32.0), UnitTemperature.Fahrenheit, markerFahrenheit);
 Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
@@ -49,7 +46,6 @@ static double CelsiusToKelvin(double celsius) {
 
 	return kelvin;
 };
-
 temperature = (CelsiusToKelvin(32.0), UnitTemperature.Kelvin, markerKelvin);
 Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
@@ -63,7 +59,6 @@ static double KelvinToFahrenheit(double kelvin) {
 
 	return fahrenheit;
 };
-
 temperature = (KelvinToFahrenheit(32.0), UnitTemperature.Fahrenheit, markerFahrenheit);
 Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
@@ -75,7 +70,6 @@ static double KelvinToCelsius(double kelvin) {
 
 	return celsius;
 };
-
 temperature = (KelvinToCelsius(32.0), UnitTemperature.Celsius, markerCelsius);
 Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
