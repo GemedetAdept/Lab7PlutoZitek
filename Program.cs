@@ -40,10 +40,11 @@ while (menuBool) {
 	Snippet.Break();
 	Console.Write("Input selection number > ");
 	userSelection = Console.ReadLine();
+	int selectionCheck = 0;
 
-
-	// Temperature Conversion
-	if (Int32.Parse(userSelection) == (int)UnitOptions.Temperature+1) {
+// Temperature Conversion
+	if (int.TryParse(userSelection, out selectionCheck) == true &&
+		Int32.Parse(userSelection) == (int)UnitOptions.Temperature+1) {
 
 		Console.WriteLine("-- Temperature Conversion Menu --");
 
@@ -52,8 +53,10 @@ while (menuBool) {
 		}
 	}
 
-	// Length Conversion
-	else if (Int32.Parse(userSelection) == (int)UnitOptions.Length+1) {
+
+// Length Conversion
+	else if (int.TryParse(userSelection, out selectionCheck) == true &&
+		Int32.Parse(userSelection) == (int)UnitOptions.Length+1) {
 
 		Console.WriteLine("-- Length Conversion Menu --");
 
@@ -62,8 +65,10 @@ while (menuBool) {
 		}
 	}
 
-	// Time Conversion
-	else if (Int32.Parse(userSelection) == (int)UnitOptions.Time+1) {
+
+// Time Conversion
+	else if (int.TryParse(userSelection, out selectionCheck) == true &&
+		Int32.Parse(userSelection) == (int)UnitOptions.Time+1) {
 
 		Console.WriteLine("-- Time Conversion Menu --");
 
@@ -72,8 +77,15 @@ while (menuBool) {
 		}
 	}
 
-	// Invalid Input
 
+// Invalid Input
+	else {
+
+		Console.WriteLine($"\"{userSelection}\" is an invalid input.");
+	}
+
+// End Operation
+	Console.WriteLine("Press any key to continue...");
 	Console.ReadKey();
 }
 
