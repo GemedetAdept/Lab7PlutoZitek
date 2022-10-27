@@ -21,11 +21,11 @@
 
 [x] 9. Write Conversion Functions for Yard to Inch and Feet. The Functions should return a tuple with the Measurement and the Unit.
 
-[ ] 10. Write Conversion Functions for Seconds to Minutes and Hours. The Functions should return a tuple with the Measurement and the Unit.
+[x] 10. Write Conversion Functions for Seconds to Minutes and Hours. The Functions should return a tuple with the Measurement and the Unit.
 
-[ ] 11. Write Conversion Functions for Hours to Seconds and Minutes. The Functions should return a tuple with the Measurement and the Unit.
+[x] 11. Write Conversion Functions for Hours to Seconds and Minutes. The Functions should return a tuple with the Measurement and the Unit.
 
-[ ] 12. Write Conversion Functions for Minutes to Hours and Seconds. The Functions should return a tuple with the Measurement and the Unit.
+[x] 12. Write Conversion Functions for Minutes to Hours and Seconds. The Functions should return a tuple with the Measurement and the Unit.
 
 [ ] 13. Write a Driver program with a menu that lets the user choose what conversion they want to use.
 
