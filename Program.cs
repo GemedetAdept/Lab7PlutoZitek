@@ -164,6 +164,30 @@ string markerMinutes = " minute(s)";
 string markerHours = " hour(s)";
 (double, UnitTime, string) time = (0.0, UnitTime.Seconds, markerSeconds);
 
+double SecondsToMinutes(double seconds) {
+
+	double minutes = 0.0;
+	minutes = seconds / 60.0;
+
+	return minutes;
+}
+Snippet.Note("167 - SecondsToMinutes; Input 55.0; Expected Output: 0.91666");
+time = (SecondsToMinutes(55.0), UnitTime.Minutes, markerMinutes);
+Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
+Snippet.Break();
+
+double SecondsToHours(double seconds) {
+
+	double hours = 0.0;
+	hours = seconds / 3_600.0;
+
+	return hours;
+}
+Snippet.Note("179 - SecondsToHours; Input 55.0; Expected Output: 0.01527");
+time = (SecondsToHours(55.0), UnitTime.Hours, markerHours);
+Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
+Snippet.Break();
+
 // ------------------------------------------------------------------
 
 enum UnitTemperature {
