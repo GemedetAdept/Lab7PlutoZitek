@@ -76,11 +76,23 @@ Snippet.Break();
 
 // ------------------------------------------------------------------
 // Length Unit Conversion
+Snippet.Note("79 - Length Unit Conversions");
 string markerInches = " inch(es)";
 string markerFeet = " feet";
 string markerYards = " yard(s)";
 (double, UnitLength, string) length = (0.0, UnitLength.Inches, markerInches);
 
+double InchesToFeet(double inches) {
+	
+	double feet = 0.0;
+	feet = inches / 12.0;
+
+	return feet;	
+};
+Snippet.Note("92 - InchesToFeet; Input: 13.0; Expected Output: 1.08333;");
+length = (InchesToFeet(13.0), UnitLength.Feet, markerFeet);
+Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
+Snippet.Break();
 
 
 // ------------------------------------------------------------------
