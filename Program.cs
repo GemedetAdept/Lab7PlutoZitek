@@ -62,8 +62,17 @@ while (menuBool) {
 		}
 	}
 
-	//Time Conversion
-	
+	// Time Conversion
+	else if (Int32.Parse(userSelection) == (int)UnitOptions.Time+1) {
+
+		Console.WriteLine("-- Time Conversion Menu --");
+
+		for (int i = 0; i < unitTimeOptions.Length; i++) {
+			Console.WriteLine($"[{i+1}] - {unitTimeOptions[i]}");
+		}
+	}
+
+	// Invalid Input
 
 	Console.ReadKey();
 }
