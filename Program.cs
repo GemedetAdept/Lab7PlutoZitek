@@ -1,5 +1,40 @@
 ﻿// CS 1400 - Lab 7: Conversions
 
+// Selection Menu Driver
+string[] unitTypeOptions = new string[] {
+	"Temperature",
+	"Length",
+	"Time",
+};
+
+string[] unitTemperatureOptions = new string[] {
+	"Fahrenheit to Celsius",
+	"Fahrenheit to Kelvin",
+	"Celsius to Fahrenheit",
+	"Celsius to Kelvin",
+	"Kelvin to Fahrenheit",
+	"KelvinToCelsius",
+};
+
+string[] unitLengthOptions = new string[] {
+	"Inches to Feet",
+	"Inches to Yards",
+	"Feet to Inches",
+	"Feet to Yards",
+	"Yards to Inches",
+	"Yards to Feet",	
+};
+
+string[] unitTimeOptions = new string[] {
+	"Seconds to Minutes",
+	"Seconds to Hours",
+	"Minutes to Seconds",
+	"Minutes to Hours",
+	"Hours to Seconds",
+	"Hours to Minutes",	
+};
+
+// ------------------------------------------------------------------
 // Temperature Unit Conversion
 string markerCelsius = " °C";
 string markerFahrenheit = " °F";
@@ -89,7 +124,6 @@ double InchesToFeet(double inches) {
 
 	return feet;	
 };
-Snippet.Note("92 - InchesToFeet; Input: 13.0; Expected Output: 1.08333;");
 length = (InchesToFeet(13.0), UnitLength.Feet, markerFeet);
 Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
 Snippet.Break();
@@ -101,7 +135,6 @@ double InchesToYards(double inches) {
 
 	return yards;
 }
-Snippet.Note("97 - InchesToYards; Input: 13.0; Expected Output: 0.36111;");
 length = (InchesToYards(13.0), UnitLength.Yards, markerYards);
 Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
 Snippet.Break();
@@ -114,7 +147,6 @@ double FeetToInches(double feet) {
 
 	return inches;
 }
-Snippet.Note("110 - FeetToInches; Input: 13.0; Expected Output: 156;");
 length = (FeetToInches(13.0), UnitLength.Inches, markerInches);
 Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
 Snippet.Break();
@@ -126,7 +158,6 @@ double FeetToYards(double feet) {
 
 	return yards;
 }
-Snippet.Note("122 - FeetToYards; Input: 13.0; Expected Output: 4.33333;");
 length = (FeetToYards(13.0), UnitLength.Yards, markerYards);
 Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
 Snippet.Break();
@@ -139,7 +170,6 @@ double YardsToInches(double yards) {
 
 	return inches;
 }
-Snippet.Note("135 - YardsToInches; Input: 13.0; Expected Output: 468;");
 length = (YardsToInches(13.0), UnitLength.Inches, markerInches);
 Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
 Snippet.Break();
@@ -151,7 +181,6 @@ double YardsToFeet(double yards) {
 
 	return feet;
 }
-Snippet.Note("147 - YardsToFeet; Input: 13.0; Expected Output: 39");
 length = (YardsToFeet(13.0), UnitLength.Feet, markerFeet);
 Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
 Snippet.Break();
@@ -171,7 +200,6 @@ double SecondsToMinutes(double seconds) {
 
 	return minutes;
 }
-Snippet.Note("167 - SecondsToMinutes; Input 55.0; Expected Output: 0.91666");
 time = (SecondsToMinutes(55.0), UnitTime.Minutes, markerMinutes);
 Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
 Snippet.Break();
@@ -183,7 +211,6 @@ double SecondsToHours(double seconds) {
 
 	return hours;
 }
-Snippet.Note("179 - SecondsToHours; Input 55.0; Expected Output: 0.01527");
 time = (SecondsToHours(55.0), UnitTime.Hours, markerHours);
 Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
 Snippet.Break();
@@ -196,7 +223,6 @@ double MinutesToSeconds(double minutes) {
 
 	return seconds;
 }
-Snippet.Note("192 - MinutesToSeconds; Input 55.0; Expected Output: 3300");
 time = (MinutesToSeconds(55.0), UnitTime.Seconds, markerSeconds);
 Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
 Snippet.Break();
@@ -208,10 +234,10 @@ double MinutesToHours(double minutes) {
 
 	return hours;
 }
-Snippet.Note("204 - MinutesToHours; Input 55.0; Expected Output: 0.91666");
 time = (MinutesToHours(55.0), UnitTime.Hours, markerHours);
 Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
 Snippet.Break();
+
 
 // ------------------------------------------------------------------
 
