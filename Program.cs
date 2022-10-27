@@ -6,7 +6,7 @@ string markerFahrenheit = " °F";
 string markerKelvin = " K";
 (double, UnitTemperature, string) temperature = (0.0, UnitTemperature.Celsius, markerCelsius);
 
-
+// Fahrenheit to Celsius and Kelvin
 static double FahrenheitToCelsius(double fahrenheit) {
 	double celsius = 0.0;
 	celsius = (fahrenheit - 32.0) * (5/9);
@@ -17,7 +17,6 @@ static double FahrenheitToCelsius(double fahrenheit) {
 temperature = (FahrenheitToCelsius(32.0), UnitTemperature.Celsius, markerCelsius);
 Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
-
 
 static double FahrenheitToKelvin(double fahrenheit) {
 	double kelvin = 0.0;
@@ -31,6 +30,7 @@ Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
 
 
+// Celsius to Fahrenheit and Kelvin
 static double CelsiusToFahrenheit(double celsius) {
 	double fahrenheit = 0.0;
 	fahrenheit = celsius * 9/5 + 32;
@@ -41,7 +41,6 @@ static double CelsiusToFahrenheit(double celsius) {
 temperature = (CelsiusToFahrenheit(32.0), UnitTemperature.Fahrenheit, markerFahrenheit);
 Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
-
 
 static double CelsiusToKelvin(double celsius) {
 
@@ -56,6 +55,7 @@ Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
 
 
+// Kelvin to Fahrenheit and Celsius
 static double KelvinToFahrenheit(double kelvin) {
 
 	double fahrenheit = 0.0;
@@ -68,7 +68,6 @@ temperature = (KelvinToFahrenheit(32.0), UnitTemperature.Fahrenheit, markerFahre
 Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
 
-
 static double KelvinToCelsius(double kelvin) {
 
 	double celsius = 0.0;
@@ -80,6 +79,10 @@ static double KelvinToCelsius(double kelvin) {
 temperature = (KelvinToCelsius(32.0), UnitTemperature.Celsius, markerCelsius);
 Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
+
+// ------------------------------------------------------------------
+// Length Unit Conversion
+
 
 // ------------------------------------------------------------------
 
