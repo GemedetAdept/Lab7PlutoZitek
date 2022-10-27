@@ -238,6 +238,30 @@ time = (MinutesToHours(55.0), UnitTime.Hours, markerHours);
 Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
 Snippet.Break();
 
+double HoursToSeconds(double hours) {
+
+	double seconds = 0.0;
+	seconds = hours * 3_600;
+
+	return seconds;
+}
+Snippet.Note("198000");
+time = (HoursToSeconds(55.0), UnitTime.Seconds, markerSeconds);
+Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
+Snippet.Break();
+
+double HoursToMinutes(double hours) {
+
+	double minutes = 0.0;
+	minutes = hours * 60.0;
+
+	return minutes;
+}
+Snippet.Note("3300");
+time = (HoursToMinutes(55.0), UnitTime.Minutes, markerMinutes);
+Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
+Snippet.Break();
+
 
 // ------------------------------------------------------------------
 
