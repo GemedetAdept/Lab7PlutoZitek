@@ -107,6 +107,19 @@ Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
 Snippet.Break();
 
 
+double FeetToInches(double feet) {
+
+	double inches = 0.0;
+	inches = feet * 12.0;
+
+	return inches;
+}
+Snippet.Note("110 - FeetToInches; Input: 13.0; Expected Output: 156;");
+length = (FeetToInches(13.0), UnitLength.Inches, markerInches);
+Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
+Snippet.Break();
+
+
 // ------------------------------------------------------------------
 
 enum UnitTemperature {
