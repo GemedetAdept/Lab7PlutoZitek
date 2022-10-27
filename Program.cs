@@ -188,6 +188,31 @@ time = (SecondsToHours(55.0), UnitTime.Hours, markerHours);
 Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
 Snippet.Break();
 
+
+double MinutesToSeconds(double minutes) {
+
+	double seconds = 0.0;
+	seconds = minutes * 60.0;
+
+	return seconds;
+}
+Snippet.Note("192 - MinutesToSeconds; Input 55.0; Expected Output: 3300");
+time = (MinutesToSeconds(55.0), UnitTime.Seconds, markerSeconds);
+Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
+Snippet.Break();
+
+double MinutesToHours(double minutes) {
+
+	double hours = 0.0;
+	hours = minutes / 60.0;
+
+	return hours;
+}
+Snippet.Note("204 - MinutesToHours; Input 55.0; Expected Output: 0.91666");
+time = (MinutesToHours(55.0), UnitTime.Hours, markerHours);
+Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
+Snippet.Break();
+
 // ------------------------------------------------------------------
 
 enum UnitTemperature {
