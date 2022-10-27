@@ -1,19 +1,13 @@
 ﻿// CS 1400 - Lab 7: Conversions
 
 // Selection Menu Driver
-string[] unitTypeOptions = new string[] {
-	"Temperature",
-	"Length",
-	"Time",
-};
-
 string[] unitTemperatureOptions = new string[] {
 	"Fahrenheit to Celsius",
 	"Fahrenheit to Kelvin",
 	"Celsius to Fahrenheit",
 	"Celsius to Kelvin",
 	"Kelvin to Fahrenheit",
-	"KelvinToCelsius",
+	"Kelvin to Celsius",
 };
 string[] unitLengthOptions = new string[] {
 	"Inches to Feet",
@@ -37,13 +31,40 @@ string userSelection = "";
 while (menuBool) {
 
 	Console.WriteLine("-- Unit Conversion Menu --");
-	for (int i = 0; i < unitTypeOptions.Length; i++) {
-		Console.WriteLine($"[{i+1}] - {unitTypeOptions[i]}");
+
+	int unitTypeAmount = Enum.GetNames(typeof(UnitOptions)).Length;
+	for (int i = 0; i < unitTypeAmount; i++) {
+		Console.WriteLine($"[{i+1}] - {(UnitOptions)i}");
 	}
+
 	Snippet.Break();
 	Console.Write("Input selection number > ");
 	userSelection = Console.ReadLine();
-	Console.WriteLine(userSelection);
+
+
+	// Temperature Conversion
+	if (Int32.Parse(userSelection) == (int)UnitOptions.Temperature+1) {
+
+		Console.WriteLine("-- Temperature Conversion Menu --");
+
+		for (int i = 0; i < unitTemperatureOptions.Length; i++) {
+			Console.WriteLine($"[{i+1}] - {unitTemperatureOptions[i]}");
+		}
+	}
+
+	// Length Conversion
+	else if (Int32.Parse(userSelection) == (int)UnitOptions.Length+1) {
+
+		Console.WriteLine("-- Length Conversion Menu --");
+
+		for (int i = 0; i < unitLengthOptions.Length; i++) {
+			Console.WriteLine($"[{i+1}] - {unitLengthOptions[i]}");
+		}
+	}
+
+	//Time Conversion
+	
+
 	Console.ReadKey();
 }
 
@@ -276,6 +297,13 @@ Snippet.Break();
 
 
 // ------------------------------------------------------------------
+
+enum UnitOptions {
+
+	Temperature,
+	Length,
+	Time,
+}
 
 enum UnitTemperature {
 
