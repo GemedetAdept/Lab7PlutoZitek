@@ -47,7 +47,7 @@ static double CelsiusToFahrenheit(double celsius) {
 	return fahrenheit;
 };
 
-Snippet.Note("function: CelsiusToFahrenheit -- 43");
+Snippet.Note("function: CelsiusToFahrenheit -- 50");
 Snippet.Note("Input: 32.0; Expected Output: 89.6;");
 Snippet.Note("Output:");
 temperature = (CelsiusToFahrenheit(32.0), UnitTemperature.Fahrenheit, markerFahrenheit);
@@ -64,41 +64,47 @@ static double CelsiusToKelvin(double celsius) {
 	return kelvin;
 };
 
-Snippet.Note("function: CelsiusToKelvin -- 46");
+Snippet.Note("function: CelsiusToKelvin -- 67");
 Snippet.Note("Input: 32.0; Expected Output: 305.15;");
 Snippet.Note("Output:");
-Snippet.Note(CelsiusToKelvin(32.0));
+temperature = (CelsiusToKelvin(32.0), UnitTemperature.Kelvin, markerKelvin);
+Snippet.Note(temperature);
+Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 Snippet.Break();
 
 
-// static double KelvinToFahrenheit(double kelvin) {
+static double KelvinToFahrenheit(double kelvin) {
 
-// 	double fahrenheit = 0.0;
-// 	fahrenheit = kelvin * 9/5 - 459.67;
+	double fahrenheit = 0.0;
+	fahrenheit = kelvin * 9/5 - 459.67;
 
-// 	return fahrenheit;
-// };
+	return fahrenheit;
+};
 
-// Snippet.Note("function: KelvinToFahrenheit -- 58");
-// Snippet.Note("Input: 32.0; Expected Output: -402.07;");
-// Snippet.Note("Output:");
-// Snippet.Note(KelvinToFahrenheit(32.0));
-// Snippet.Break();
+Snippet.Note("function: KelvinToFahrenheit -- 84");
+Snippet.Note("Input: 32.0; Expected Output: -402.07;");
+Snippet.Note("Output:");
+temperature = (KelvinToFahrenheit(32.0), UnitTemperature.Fahrenheit, markerFahrenheit);
+Snippet.Note(temperature);
+Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
+Snippet.Break();
 
 
-// static double KelvinToCelsius(double kelvin) {
+static double KelvinToCelsius(double kelvin) {
 
-// 	double celsius = 0.0;
-// 	celsius = kelvin - 273.15;
+	double celsius = 0.0;
+	celsius = kelvin - 273.15;
 
-// 	return celsius;
-// };
+	return celsius;
+};
 
-// Snippet.Note("function: KelvinToCelsius -- 70");
-// Snippet.Note("Input: 32.0; Expected Output: -241.15;");
-// Snippet.Note("Output:");
-// Snippet.Note(KelvinToCelsius(32.0));
-// Snippet.Break();
+Snippet.Note("function: KelvinToCelsius -- 101");
+Snippet.Note("Input: 32.0; Expected Output: -241.15;");
+Snippet.Note("Output:");
+temperature = (KelvinToCelsius(32.0), UnitTemperature.Celsius, markerCelsius);
+Snippet.Note(temperature);
+Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
+Snippet.Break();
 
 // ------------------------------------------------------------------
 
