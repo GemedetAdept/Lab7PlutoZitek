@@ -9,11 +9,11 @@
 
 [x] 3. Create an enumeration with time units. Seconds, Minutes, Hours
 
-[ ] 4. Write Conversion Functions for Celsius to Fahrenheit and Kelvin. The Functions should return a tuple with the Measurement and the Unit.
+[x] 4. Write Conversion Functions for Celsius to Fahrenheit and Kelvin. The Functions should return a tuple with the Measurement and the Unit.
 
-[ ] 5. Write Conversion Functions for Fahrenheit to Celsius and Kelvin. The Functions should return a tuple with the Measurement and the Unit.
+[x] 5. Write Conversion Functions for Fahrenheit to Celsius and Kelvin. The Functions should return a tuple with the Measurement and the Unit.
 
-[ ] 6. Write Conversion Functions for Kelvin to Celsius and Fahrenheit. The Functions should return a tuple with the Measurement and the Unit.
+[x] 6. Write Conversion Functions for Kelvin to Celsius and Fahrenheit. The Functions should return a tuple with the Measurement and the Unit.
 
 [ ] 7. Write Conversion Functions for Inch to Feet and Yard. The Functions should return a tuple with the Measurement and the Unit.
 
