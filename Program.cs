@@ -132,6 +132,19 @@ Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
 Snippet.Break();
 
 
+double YardsToInches(double yards) {
+
+	double inches = 0.0;
+	inches = yards * 36;
+
+	return inches;
+}
+Snippet.Note("135 - YardsToInches; Input: 13.0; Expected Output: 468;");
+length = (YardsToInches(13.0), UnitLength.Inches, markerInches);
+Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
+Snippet.Break();
+
+
 // ------------------------------------------------------------------
 
 enum UnitTemperature {
