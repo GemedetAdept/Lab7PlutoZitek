@@ -157,6 +157,14 @@ Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
 Snippet.Break();
 
 // ------------------------------------------------------------------
+// Time Unit Conversion
+Snippet.Note("161 - Time Unit Conversions");
+string markerSeconds = " second(s)";
+string markerMinutes = " minute(s)";
+string markerHours = " hour(s)";
+(double, UnitTime, string) time = (0.0, UnitTime.Seconds, markerSeconds);
+
+// ------------------------------------------------------------------
 
 enum UnitTemperature {
 
