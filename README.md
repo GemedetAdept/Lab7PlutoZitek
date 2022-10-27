@@ -15,11 +15,11 @@
 
 [x] 6. Write Conversion Functions for Kelvin to Celsius and Fahrenheit. The Functions should return a tuple with the Measurement and the Unit.
 
-[ ] 7. Write Conversion Functions for Inch to Feet and Yard. The Functions should return a tuple with the Measurement and the Unit.
+[x] 7. Write Conversion Functions for Inch to Feet and Yard. The Functions should return a tuple with the Measurement and the Unit.
 
-[ ] 8. Write Conversion Functions for Feet to Inch and Yard. The Functions should return a tuple with the Measurement and the Unit.
+[x] 8. Write Conversion Functions for Feet to Inch and Yard. The Functions should return a tuple with the Measurement and the Unit.
 
-[ ] 9. Write Conversion Functions for Yard to Inch and Feet. The Functions should return a tuple with the Measurement and the Unit.
+[x] 9. Write Conversion Functions for Yard to Inch and Feet. The Functions should return a tuple with the Measurement and the Unit.
 
 [ ] 10. Write Conversion Functions for Seconds to Minutes and Hours. The Functions should return a tuple with the Measurement and the Unit.
 
