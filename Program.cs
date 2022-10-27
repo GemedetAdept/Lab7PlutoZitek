@@ -15,7 +15,6 @@ string[] unitTemperatureOptions = new string[] {
 	"Kelvin to Fahrenheit",
 	"KelvinToCelsius",
 };
-
 string[] unitLengthOptions = new string[] {
 	"Inches to Feet",
 	"Inches to Yards",
@@ -24,7 +23,6 @@ string[] unitLengthOptions = new string[] {
 	"Yards to Inches",
 	"Yards to Feet",	
 };
-
 string[] unitTimeOptions = new string[] {
 	"Seconds to Minutes",
 	"Seconds to Hours",
@@ -34,8 +32,24 @@ string[] unitTimeOptions = new string[] {
 	"Hours to Minutes",	
 };
 
+bool menuBool = true;
+string userSelection = "";
+while (menuBool) {
+
+	Console.WriteLine("-- Unit Conversion Menu --");
+	for (int i = 0; i < unitTypeOptions.Length; i++) {
+		Console.WriteLine($"[{i+1}] - {unitTypeOptions[i]}");
+	}
+	Snippet.Break();
+	Console.Write("Input selection number > ");
+	userSelection = Console.ReadLine();
+	Console.WriteLine(userSelection);
+	Console.ReadKey();
+}
+
 // ------------------------------------------------------------------
 // Temperature Unit Conversion
+Snippet.Note("39 - Temperature Unit Conversions");
 string markerCelsius = " °C";
 string markerFahrenheit = " °F";
 string markerKelvin = " K";
@@ -245,7 +259,6 @@ double HoursToSeconds(double hours) {
 
 	return seconds;
 }
-Snippet.Note("198000");
 time = (HoursToSeconds(55.0), UnitTime.Seconds, markerSeconds);
 Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
 Snippet.Break();
@@ -257,7 +270,6 @@ double HoursToMinutes(double hours) {
 
 	return minutes;
 }
-Snippet.Note("3300");
 time = (HoursToMinutes(55.0), UnitTime.Minutes, markerMinutes);
 Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
 Snippet.Break();
