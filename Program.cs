@@ -144,6 +144,17 @@ length = (YardsToInches(13.0), UnitLength.Inches, markerInches);
 Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
 Snippet.Break();
 
+double YardsToFeet(double yards) {
+
+	double feet = 0.0;
+	feet = yards * 3.0;
+
+	return feet;
+}
+Snippet.Note("147 - YardsToFeet; Input: 13.0; Expected Output: 39");
+length = (YardsToFeet(13.0), UnitLength.Feet, markerFeet);
+Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
+Snippet.Break();
 
 // ------------------------------------------------------------------
 
