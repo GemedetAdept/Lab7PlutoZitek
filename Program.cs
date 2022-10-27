@@ -76,6 +76,11 @@ Snippet.Break();
 
 // ------------------------------------------------------------------
 // Length Unit Conversion
+string markerInches = " inch(es)";
+string markerFeet = " feet";
+string markerYards = " yard(s)";
+(double, UnitLength, string) length = (0.0, UnitLength.Inches, markerInches);
+
 
 
 // ------------------------------------------------------------------
