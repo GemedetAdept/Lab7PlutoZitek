@@ -1,5 +1,9 @@
 ﻿// CS 1400 - Lab 7: Conversions
 
+void invalidInput(int invalidValue) {
+	Console.WriteLine($"\"{invalidValue}\" is an invalid input.");
+};
+
 // Selection Menu Driver
 string[] unitTemperatureOptions = new string[] {
 	"Fahrenheit to Celsius",
@@ -59,10 +63,34 @@ while (menuBool) {
 
 		Console.WriteLine(unitTemperatureOptions[userSelection-1]);
 		Snippet.Break();
-		
-		Console.WriteLine("Input value to convert >");
+
+		Console.Write("Input value to convert > ");
 		inputValue = Double.Parse(Console.ReadLine());
-		Snippet.Note(inputValue);
+
+		switch (userSelection){
+
+			case 1:
+				Console.WriteLine(FahrenheitToCelsius(inputValue));
+				break;
+			case 2:
+				Console.WriteLine(FahrenheitToKelvin(inputValue));
+				break;
+			case 3:
+				Console.WriteLine(CelsiusToFahrenheit(inputValue));
+				break;
+			case 4:
+				Console.WriteLine(CelsiusToKelvin(inputValue));
+				break;	
+			case 5:
+				Console.WriteLine(KelvinToFahrenheit(inputValue));
+				break;
+			case 6:
+				Console.WriteLine(KelvinToCelsius(inputValue));
+				break;
+			default:
+				invalidInput(userSelection);
+				break;
+		}
 	}
 
 
@@ -82,7 +110,7 @@ while (menuBool) {
 		Console.WriteLine(unitLengthOptions[userSelection-1]);
 		Snippet.Break();
 
-		Console.WriteLine("Input value to convert >");
+		Console.WriteLine("Input value to convert > ");
 		inputValue = Double.Parse(Console.ReadLine());
 		Snippet.Note(inputValue);
 	}
@@ -104,16 +132,15 @@ while (menuBool) {
 		Console.WriteLine(unitTimeOptions[userSelection-1]);
 		Snippet.Break();
 
-		Console.WriteLine("Input value to convert >");
+		Console.WriteLine("Input value to convert > ");
 		inputValue = Double.Parse(Console.ReadLine());
 		Snippet.Note(inputValue);
 	}
 
-
 // Invalid Input
 	else {
 
-		Console.WriteLine($"\"{userSelection}\" is an invalid input.");
+		invalidInput(userSelection);
 	}
 
 // End Operation
@@ -132,7 +159,7 @@ string markerKelvin = " K";
 // Fahrenheit to Celsius and Kelvin
 double FahrenheitToCelsius(double fahrenheit) {
 	double celsius = 0.0;
-	celsius = (fahrenheit - 32.0) * (5/9);
+	celsius = (fahrenheit - 32.0) * 5/9;
 
 	return celsius;
 };
