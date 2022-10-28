@@ -4,6 +4,23 @@ void invalidInput(int invalidValue) {
 	Console.WriteLine($"\"{invalidValue}\" is an invalid input.");
 };
 
+string markerCelsius = " °C";
+string markerFahrenheit = " °F";
+string markerKelvin = " K";
+(double, UnitTemperature, string) temperature = (0.0, UnitTemperature.Celsius, markerCelsius);
+
+string markerInches = " inch(es)";
+string markerFeet = " feet";
+string markerYards = " yard(s)";
+(double, UnitLength, string) length = (0.0, UnitLength.Inches, markerInches);
+
+string markerSeconds = " second(s)";
+string markerMinutes = " minute(s)";
+string markerHours = " hour(s)";
+(double, UnitTime, string) time = (0.0, UnitTime.Seconds, markerSeconds);
+
+// ------------------------------------------------------------------
+
 // Selection Menu Driver
 string[] unitTemperatureOptions = new string[] {
 	"Fahrenheit to Celsius",
@@ -37,7 +54,7 @@ double inputValue = 0.0;
 while (menuBool) {
 
 	Console.WriteLine("-- Unit Conversion Menu --");
-	Console.WriteLine("Press [ESC] to exit.");
+	Console.WriteLine("Type \"0\" to exit.");
 
 	int unitTypeAmount = Enum.GetNames(typeof(UnitOptions)).Length;
 	for (int i = 0; i < unitTypeAmount; i++) {
@@ -61,6 +78,7 @@ while (menuBool) {
 		Console.Write("Input selection number > ");
 		userSelection = int.Parse(Console.ReadLine());
 
+		Console.Clear();
 		Console.WriteLine(unitTemperatureOptions[userSelection-1]);
 		Snippet.Break();
 
@@ -70,7 +88,9 @@ while (menuBool) {
 		switch (userSelection){
 
 			case 1:
-				Console.WriteLine(FahrenheitToCelsius(inputValue));
+				FahrenheitToCelsius(inputValue);
+				temperature = (FahrenheitToCelsius(32.0), UnitTemperature.Celsius, markerCelsius);
+				Console.WriteLine(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 				break;
 			case 2:
 				Console.WriteLine(FahrenheitToKelvin(inputValue));
@@ -107,12 +127,37 @@ while (menuBool) {
 		Console.Write("Input selection number > ");
 		userSelection = int.Parse(Console.ReadLine());
 
+		Console.Clear();
 		Console.WriteLine(unitLengthOptions[userSelection-1]);
 		Snippet.Break();
 
 		Console.WriteLine("Input value to convert > ");
 		inputValue = Double.Parse(Console.ReadLine());
-		Snippet.Note(inputValue);
+
+		switch (userSelection){
+
+			case 1:
+				Console.WriteLine(InchesToFeet(inputValue));
+				break;
+			case 2:
+				Console.WriteLine(InchesToYards(inputValue));
+				break;
+			case 3:
+				Console.WriteLine(FeetToInches(inputValue));
+				break;
+			case 4:
+				Console.WriteLine(FeetToYards(inputValue));
+				break;	
+			case 5:
+				Console.WriteLine(YardsToInches(inputValue));
+				break;
+			case 6:
+				Console.WriteLine(YardsToFeet(inputValue));
+				break;
+			default:
+				invalidInput(userSelection);
+				break;
+		}
 	}
 
 
@@ -129,12 +174,43 @@ while (menuBool) {
 		Console.Write("Input selection number > ");
 		userSelection = int.Parse(Console.ReadLine());
 
+		Console.Clear();
 		Console.WriteLine(unitTimeOptions[userSelection-1]);
 		Snippet.Break();
 
 		Console.WriteLine("Input value to convert > ");
 		inputValue = Double.Parse(Console.ReadLine());
-		Snippet.Note(inputValue);
+
+		switch (userSelection){
+
+			case 1:
+				Console.WriteLine(SecondsToMinutes(inputValue));
+				break;
+			case 2:
+				Console.WriteLine(SecondsToHours(inputValue));
+				break;
+			case 3:
+				Console.WriteLine(MinutesToSeconds(inputValue));
+				break;
+			case 4:
+				Console.WriteLine(MinutesToHours(inputValue));
+				break;	
+			case 5:
+				Console.WriteLine(HoursToSeconds(inputValue));
+				break;
+			case 6:
+				Console.WriteLine(HoursToMinutes(inputValue));
+				break;
+			default:
+				invalidInput(userSelection);
+				break;
+		}
+	}
+
+	else if (userSelection == 0) {
+
+		Console.Clear();
+		Environment.Exit(0);
 	}
 
 // Invalid Input
@@ -150,11 +226,6 @@ while (menuBool) {
 
 // ------------------------------------------------------------------
 // Temperature Unit Conversion
-Snippet.Note("39 - Temperature Unit Conversions");
-string markerCelsius = " °C";
-string markerFahrenheit = " °F";
-string markerKelvin = " K";
-(double, UnitTemperature, string) temperature = (0.0, UnitTemperature.Celsius, markerCelsius);
 
 // Fahrenheit to Celsius and Kelvin
 double FahrenheitToCelsius(double fahrenheit) {
@@ -163,9 +234,6 @@ double FahrenheitToCelsius(double fahrenheit) {
 
 	return celsius;
 };
-temperature = (FahrenheitToCelsius(32.0), UnitTemperature.Celsius, markerCelsius);
-Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
-Snippet.Break();
 
 double FahrenheitToKelvin(double fahrenheit) {
 	double kelvin = 0.0;
@@ -173,9 +241,6 @@ double FahrenheitToKelvin(double fahrenheit) {
 
 	return kelvin;
 };
-temperature = (FahrenheitToKelvin(32.0), UnitTemperature.Kelvin, markerKelvin);
-Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
-Snippet.Break();
 
 
 // Celsius to Fahrenheit and Kelvin
@@ -185,9 +250,6 @@ double CelsiusToFahrenheit(double celsius) {
 
 	return fahrenheit;
 };
-temperature = (CelsiusToFahrenheit(32.0), UnitTemperature.Fahrenheit, markerFahrenheit);
-Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
-Snippet.Break();
 
 double CelsiusToKelvin(double celsius) {
 
@@ -196,9 +258,6 @@ double CelsiusToKelvin(double celsius) {
 
 	return kelvin;
 };
-temperature = (CelsiusToKelvin(32.0), UnitTemperature.Kelvin, markerKelvin);
-Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
-Snippet.Break();
 
 
 // Kelvin to Fahrenheit and Celsius
@@ -209,9 +268,6 @@ double KelvinToFahrenheit(double kelvin) {
 
 	return fahrenheit;
 };
-temperature = (KelvinToFahrenheit(32.0), UnitTemperature.Fahrenheit, markerFahrenheit);
-Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
-Snippet.Break();
 
 double KelvinToCelsius(double kelvin) {
 
@@ -220,17 +276,9 @@ double KelvinToCelsius(double kelvin) {
 
 	return celsius;
 };
-temperature = (KelvinToCelsius(32.0), UnitTemperature.Celsius, markerCelsius);
-Snippet.Note(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
-Snippet.Break();
 
 // ------------------------------------------------------------------
 // Length Unit Conversion
-Snippet.Note("79 - Length Unit Conversions");
-string markerInches = " inch(es)";
-string markerFeet = " feet";
-string markerYards = " yard(s)";
-(double, UnitLength, string) length = (0.0, UnitLength.Inches, markerInches);
 
 double InchesToFeet(double inches) {
 	
@@ -239,9 +287,6 @@ double InchesToFeet(double inches) {
 
 	return feet;	
 };
-length = (InchesToFeet(13.0), UnitLength.Feet, markerFeet);
-Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
-Snippet.Break();
 
 double InchesToYards(double inches) {
 
@@ -250,9 +295,6 @@ double InchesToYards(double inches) {
 
 	return yards;
 }
-length = (InchesToYards(13.0), UnitLength.Yards, markerYards);
-Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
-Snippet.Break();
 
 
 double FeetToInches(double feet) {
@@ -262,9 +304,6 @@ double FeetToInches(double feet) {
 
 	return inches;
 }
-length = (FeetToInches(13.0), UnitLength.Inches, markerInches);
-Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
-Snippet.Break();
 
 double FeetToYards(double feet) {
 
@@ -273,9 +312,6 @@ double FeetToYards(double feet) {
 
 	return yards;
 }
-length = (FeetToYards(13.0), UnitLength.Yards, markerYards);
-Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
-Snippet.Break();
 
 
 double YardsToInches(double yards) {
@@ -285,9 +321,6 @@ double YardsToInches(double yards) {
 
 	return inches;
 }
-length = (YardsToInches(13.0), UnitLength.Inches, markerInches);
-Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
-Snippet.Break();
 
 double YardsToFeet(double yards) {
 
@@ -296,17 +329,9 @@ double YardsToFeet(double yards) {
 
 	return feet;
 }
-length = (YardsToFeet(13.0), UnitLength.Feet, markerFeet);
-Snippet.Note(length.Item2 + ": " + length.Item1 + length.Item3);
-Snippet.Break();
 
 // ------------------------------------------------------------------
 // Time Unit Conversion
-Snippet.Note("161 - Time Unit Conversions");
-string markerSeconds = " second(s)";
-string markerMinutes = " minute(s)";
-string markerHours = " hour(s)";
-(double, UnitTime, string) time = (0.0, UnitTime.Seconds, markerSeconds);
 
 double SecondsToMinutes(double seconds) {
 
@@ -315,9 +340,6 @@ double SecondsToMinutes(double seconds) {
 
 	return minutes;
 }
-time = (SecondsToMinutes(55.0), UnitTime.Minutes, markerMinutes);
-Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
-Snippet.Break();
 
 double SecondsToHours(double seconds) {
 
@@ -326,9 +348,6 @@ double SecondsToHours(double seconds) {
 
 	return hours;
 }
-time = (SecondsToHours(55.0), UnitTime.Hours, markerHours);
-Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
-Snippet.Break();
 
 
 double MinutesToSeconds(double minutes) {
@@ -338,9 +357,6 @@ double MinutesToSeconds(double minutes) {
 
 	return seconds;
 }
-time = (MinutesToSeconds(55.0), UnitTime.Seconds, markerSeconds);
-Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
-Snippet.Break();
 
 double MinutesToHours(double minutes) {
 
@@ -349,9 +365,7 @@ double MinutesToHours(double minutes) {
 
 	return hours;
 }
-time = (MinutesToHours(55.0), UnitTime.Hours, markerHours);
-Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
-Snippet.Break();
+
 
 double HoursToSeconds(double hours) {
 
@@ -360,9 +374,6 @@ double HoursToSeconds(double hours) {
 
 	return seconds;
 }
-time = (HoursToSeconds(55.0), UnitTime.Seconds, markerSeconds);
-Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
-Snippet.Break();
 
 double HoursToMinutes(double hours) {
 
@@ -371,10 +382,6 @@ double HoursToMinutes(double hours) {
 
 	return minutes;
 }
-time = (HoursToMinutes(55.0), UnitTime.Minutes, markerMinutes);
-Snippet.Note(time.Item2 + ": " + time.Item1 + time.Item3);
-Snippet.Break();
-
 
 // ------------------------------------------------------------------
 
