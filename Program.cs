@@ -53,6 +53,7 @@ double inputValue = 0.0;
 
 while (menuBool) {
 
+	Console.Clear();
 	Console.WriteLine("-- Unit Conversion Menu --");
 	Console.WriteLine("Type \"0\" to exit.");
 
@@ -68,6 +69,7 @@ while (menuBool) {
 // Temperature Conversion
 	if (userSelection == (int)UnitOptions.Temperature+1) {
 
+		Console.Clear();
 		Console.WriteLine("-- Temperature Conversion Menu --");
 
 		for (int i = 0; i < unitTemperatureOptions.Length; i++) {
@@ -88,24 +90,28 @@ while (menuBool) {
 		switch (userSelection){
 
 			case 1:
-				FahrenheitToCelsius(inputValue);
-				temperature = (FahrenheitToCelsius(32.0), UnitTemperature.Celsius, markerCelsius);
+				temperature = (FahrenheitToCelsius(inputValue), UnitTemperature.Celsius, markerCelsius);
 				Console.WriteLine(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 				break;
 			case 2:
-				Console.WriteLine(FahrenheitToKelvin(inputValue));
+				temperature = (FahrenheitToKelvin(inputValue), UnitTemperature.Kelvin, markerKelvin);
+				Console.WriteLine(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 				break;
 			case 3:
-				Console.WriteLine(CelsiusToFahrenheit(inputValue));
+				temperature = (CelsiusToFahrenheit(inputValue), UnitTemperature.Fahrenheit, markerFahrenheit);
+				Console.WriteLine(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 				break;
 			case 4:
-				Console.WriteLine(CelsiusToKelvin(inputValue));
+				temperature = (CelsiusToKelvin(inputValue), UnitTemperature.Kelvin, markerKelvin);
+				Console.WriteLine(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 				break;	
 			case 5:
-				Console.WriteLine(KelvinToFahrenheit(inputValue));
+				temperature = (KelvinToFahrenheit(inputValue), UnitTemperature.Fahrenheit, markerFahrenheit);
+				Console.WriteLine(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 				break;
 			case 6:
-				Console.WriteLine(KelvinToCelsius(inputValue));
+				temperature = (KelvinToCelsius(inputValue), UnitTemperature.Celsius, markerCelsius);
+				Console.WriteLine(temperature.Item2 + ": " + temperature.Item1 + temperature.Item3);
 				break;
 			default:
 				invalidInput(userSelection);
@@ -117,6 +123,7 @@ while (menuBool) {
 // Length Conversion
 	else if (userSelection == (int)UnitOptions.Length+1) {
 
+		Console.Clear();
 		Console.WriteLine("-- Length Conversion Menu --");
 
 		for (int i = 0; i < unitLengthOptions.Length; i++) {
@@ -137,22 +144,28 @@ while (menuBool) {
 		switch (userSelection){
 
 			case 1:
-				Console.WriteLine(InchesToFeet(inputValue));
+				length = (InchesToFeet(inputValue), UnitLength.Feet, markerFeet);
+				Console.WriteLine(length.Item2 + ": " + length.Item1 + length.Item3);
 				break;
 			case 2:
-				Console.WriteLine(InchesToYards(inputValue));
+				length = (InchesToYards(inputValue), UnitLength.Yards, markerYards);
+				Console.WriteLine(length.Item2 + ": " + length.Item1 + length.Item3);
 				break;
 			case 3:
-				Console.WriteLine(FeetToInches(inputValue));
+				length = (FeetToInches(inputValue), UnitLength.Inches, markerInches);
+				Console.WriteLine(length.Item2 + ": " + length.Item1 + length.Item3);
 				break;
 			case 4:
-				Console.WriteLine(FeetToYards(inputValue));
+				length = (FeetToYards(inputValue), UnitLength.Yards, markerYards);
+				Console.WriteLine(length.Item2 + ": " + length.Item1 + length.Item3);
 				break;	
 			case 5:
-				Console.WriteLine(YardsToInches(inputValue));
+				length = (YardsToInches(inputValue), UnitLength.Inches, markerInches);
+				Console.WriteLine(length.Item2 + ": " + length.Item1 + length.Item3);
 				break;
 			case 6:
-				Console.WriteLine(YardsToFeet(inputValue));
+				length = (YardsToFeet(inputValue), UnitLength.Feet, markerFeet);
+				Console.WriteLine(length.Item2 + ": " + length.Item1 + length.Item3);
 				break;
 			default:
 				invalidInput(userSelection);
@@ -164,6 +177,7 @@ while (menuBool) {
 // Time Conversion
 	else if (userSelection == (int)UnitOptions.Time+1) {
 
+		Console.Clear();
 		Console.WriteLine("-- Time Conversion Menu --");
 
 		for (int i = 0; i < unitTimeOptions.Length; i++) {
@@ -184,25 +198,31 @@ while (menuBool) {
 		switch (userSelection){
 
 			case 1:
-				Console.WriteLine(SecondsToMinutes(inputValue));
+				time = (SecondsToMinutes(inputValue), UnitTime.Minutes, markerMinutes);
+				Console.WriteLine(time.Item2 + ": " + time.Item1 + time.Item3);
 				break;
 			case 2:
-				Console.WriteLine(SecondsToHours(inputValue));
+				time = (SecondsToHours(inputValue), UnitTime.Hours, markerHours);
+				Console.WriteLine(time.Item2 + ": " + time.Item1 + time.Item3);
 				break;
 			case 3:
-				Console.WriteLine(MinutesToSeconds(inputValue));
+				time = (MinutesToSeconds(inputValue), UnitTime.Seconds, markerSeconds);
+				Console.WriteLine(time.Item2 + ": " + time.Item1 + time.Item3);
 				break;
 			case 4:
-				Console.WriteLine(MinutesToHours(inputValue));
+				time = (MinutesToHours(inputValue), UnitTime.Hours, markerHours);
+				Console.WriteLine(time.Item2 + ": " + time.Item1 + time.Item3);
 				break;	
 			case 5:
-				Console.WriteLine(HoursToSeconds(inputValue));
+				time = (HoursToSeconds(55.0), UnitTime.Seconds, markerSeconds);
+				Console.WriteLine(time.Item2 + ": " + time.Item1 + time.Item3);
 				break;
 			case 6:
 				Console.WriteLine(HoursToMinutes(inputValue));
 				break;
 			default:
-				invalidInput(userSelection);
+				time = (HoursToMinutes(inputValue), UnitTime.Minutes, markerMinutes);
+				Console.WriteLine(time.Item2 + ": " + time.Item1 + time.Item3);
 				break;
 		}
 	}

@@ -27,8 +27,8 @@
 
 [x] 12. Write Conversion Functions for Minutes to Hours and Seconds. The Functions should return a tuple with the Measurement and the Unit.
 
-[ ] 13. Write a Driver program with a menu that lets the user choose what conversion they want to use.
+[x] 13. Write a Driver program with a menu that lets the user choose what conversion they want to use.
 
-[ ] 14. Prompt the User for the measurement they want to convert.
+[x] 14. Prompt the User for the measurement they want to convert.
 
-[ ] 15. Display the Conversion with measurement and unit.
+[x] 15. Display the Conversion with measurement and unit.
