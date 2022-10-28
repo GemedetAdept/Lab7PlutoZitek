@@ -27,10 +27,13 @@ string[] unitTimeOptions = new string[] {
 };
 
 bool menuBool = true;
-string userSelection = "";
+int userSelection = 0;
+double inputValue = 0.0;
+
 while (menuBool) {
 
 	Console.WriteLine("-- Unit Conversion Menu --");
+	Console.WriteLine("Press [ESC] to exit.");
 
 	int unitTypeAmount = Enum.GetNames(typeof(UnitOptions)).Length;
 	for (int i = 0; i < unitTypeAmount; i++) {
@@ -39,42 +42,71 @@ while (menuBool) {
 
 	Snippet.Break();
 	Console.Write("Input selection number > ");
-	userSelection = Console.ReadLine();
-	int selectionCheck = 0;
+	userSelection = int.Parse(Console.ReadLine());
 
 // Temperature Conversion
-	if (int.TryParse(userSelection, out selectionCheck) == true &&
-		Int32.Parse(userSelection) == (int)UnitOptions.Temperature+1) {
+	if (userSelection == (int)UnitOptions.Temperature+1) {
 
 		Console.WriteLine("-- Temperature Conversion Menu --");
 
 		for (int i = 0; i < unitTemperatureOptions.Length; i++) {
 			Console.WriteLine($"[{i+1}] - {unitTemperatureOptions[i]}");
 		}
+
+		Snippet.Break();
+		Console.Write("Input selection number > ");
+		userSelection = int.Parse(Console.ReadLine());
+
+		Console.WriteLine(unitTemperatureOptions[userSelection-1]);
+		Snippet.Break();
+		
+		Console.WriteLine("Input value to convert >");
+		inputValue = Double.Parse(Console.ReadLine());
+		Snippet.Note(inputValue);
 	}
 
 
 // Length Conversion
-	else if (int.TryParse(userSelection, out selectionCheck) == true &&
-		Int32.Parse(userSelection) == (int)UnitOptions.Length+1) {
+	else if (userSelection == (int)UnitOptions.Length+1) {
 
 		Console.WriteLine("-- Length Conversion Menu --");
 
 		for (int i = 0; i < unitLengthOptions.Length; i++) {
 			Console.WriteLine($"[{i+1}] - {unitLengthOptions[i]}");
 		}
+
+		Snippet.Break();
+		Console.Write("Input selection number > ");
+		userSelection = int.Parse(Console.ReadLine());
+
+		Console.WriteLine(unitLengthOptions[userSelection-1]);
+		Snippet.Break();
+
+		Console.WriteLine("Input value to convert >");
+		inputValue = Double.Parse(Console.ReadLine());
+		Snippet.Note(inputValue);
 	}
 
 
 // Time Conversion
-	else if (int.TryParse(userSelection, out selectionCheck) == true &&
-		Int32.Parse(userSelection) == (int)UnitOptions.Time+1) {
+	else if (userSelection == (int)UnitOptions.Time+1) {
 
 		Console.WriteLine("-- Time Conversion Menu --");
 
 		for (int i = 0; i < unitTimeOptions.Length; i++) {
 			Console.WriteLine($"[{i+1}] - {unitTimeOptions[i]}");
 		}
+
+		Snippet.Break();
+		Console.Write("Input selection number > ");
+		userSelection = int.Parse(Console.ReadLine());
+
+		Console.WriteLine(unitTimeOptions[userSelection-1]);
+		Snippet.Break();
+
+		Console.WriteLine("Input value to convert >");
+		inputValue = Double.Parse(Console.ReadLine());
+		Snippet.Note(inputValue);
 	}
 
 
